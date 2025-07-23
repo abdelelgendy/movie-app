@@ -7,11 +7,17 @@ function App() {
     <div>
       <p>hello world</p>
     </div>
+    <Text/>
+  </>
+  )
+}
+
+function Text(){
+  return(
     <div>
       <p>hello world</p>
     </div>
-  </>
-  )
+    );
 }
 
 export default App

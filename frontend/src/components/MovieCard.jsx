@@ -1,4 +1,7 @@
 
+import "../css/MovieCard.css"
+
+
 // component for displaying movie
 
 const MovieCard = ({movie}) => {

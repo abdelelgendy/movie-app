@@ -47,6 +47,9 @@ const Home =()=>{
             <button type="submit" className="search-button">search</button>
         </form>
 
+            {error && <div className="error-message">{error}</div>}
+            {loading && <div className="loading">loading...</div>}
+
         <div className="movies-grid">
             {movies.map((movie) =>( 
             <MovieCard movie ={movie} key={movie.id}/>

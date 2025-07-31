@@ -29,22 +29,22 @@ const Home =()=>{
         LoadPopularMovies()
     },[])
 
-    const handleSearch = (e) =>{
+    const handleSearch = async (e) => {
         e.preventDefault()
-        if(searchQuery.trim()) return
+        if(!searchQuery.trim()) return  // Fixed: added ! to check if empty
         if (loading) return
 
-
         setLoading(true)
+        setError(null) // Clear previous errors
         try{
-
+            const searchResults = await SearchMovies(searchQuery) // Added API call
+            setMovies(searchResults)
         }catch (err){
-            setError("failed to search")
+            console.log(err)
+            setError("Failed to search movies")
         }finally{
             setLoading(false)
         }
-
-        setSearchQuery('');
     }
 
     return (

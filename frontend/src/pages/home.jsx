@@ -31,8 +31,20 @@ const Home =()=>{
 
     const handleSearch = (e) =>{
         e.preventDefault()
-        alert(searchQuery)
+        if(searchQuery.trim()) return
+        if (loading) return
 
+
+        setLoading(true)
+        try{
+
+        }catch (err){
+            setError("failed to search")
+        }finally{
+            setLoading(false)
+        }
+
+        setSearchQuery('');
     }
 
     return (
